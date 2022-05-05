@@ -1,0 +1,8 @@
+click
+jinja2
+jsonschema>=3.0
+markdown>=3.3
+packaging
+pytest-workflow
+rich-click>=1.0.0
+rich>=10.0.0
