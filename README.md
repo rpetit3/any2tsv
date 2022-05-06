@@ -6,11 +6,12 @@ Convert various bioinformatic outputs to TSV
 ## Motivation
 Well you see I have this pipeline called [Bactopia](https://bactopia.github.io/) for the analysis of bacterial genomes, and
 it [produces a lot of output files](https://bactopia.github.io/output-overview/). I started making parsers for these outputs,
-but I didn't want them to hidden in Bactopia. I wanted have a simple tool (e.g. Torsten Seemann's [`any2fasta`](https://github.com/tseemann/any2fasta))
-the community could use whether they use Bactopia or not.
+but I didn't want them to be hidden in Bactopia. Instead, I wanted create a simple tool (e.g. Torsten Seemann's [`any2fasta`](https://github.com/tseemann/any2fasta))
+the community could use.
 
-Although, please keep in mind unless there are outside contributions the available parsers will be reflective of tools
-used by Bactopia. If you would like to add a parser for a tool that you use, by all means lets get it added!
+Although, please keep in mind, unless there are outside contributions, the available parsers will be reflective of tools
+I use in Bactopia. I frankly don't have the bandwidth to expand further. But, please don't worry, if you would like to
+add a parser for a tool that you use, by all means lets get it added!
 
 ## Installation
 I'm too early in the game for this, but you can expect it to be available from pip and Bioconda in due time.
