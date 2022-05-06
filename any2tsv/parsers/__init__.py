@@ -3,4 +3,4 @@ __all__ = [
     'fastq_scan'
 ]
 
-from any2tsv.tools import *
+from any2tsv.parsers import *
