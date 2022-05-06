@@ -94,7 +94,7 @@ fastq-scan.json 7500    0.05    75      100     100     0       100     100     
 ```
 
 You might be wondering, *Where'd the read lengths and per-base qualities go?*. Well, honestly, I didn't think they were
-use in TSV format, so out they went. But, if for some reason you think they would be useful, please let me know.
+useful in TSV format, so out they went! But, if for some reason you think they would be useful, please let me know.
 
 # Naming
 I think its pretty obvious, but the name `any2tsv` is inspired by Torsten Seemann's [`any2fasta`](https://github.com/tseemann/any2fasta). `any2fasta`
