@@ -84,6 +84,7 @@ cat fastq-scan.json
         "96":31.96,        "97":32.44,        "98":30.2267,        "99":31.2533,        "100":30.2267
     }
 }
+```
 
 #### Converting `fastq-scan` to TSV
 ```{bash}
