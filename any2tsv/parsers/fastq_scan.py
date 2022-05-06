@@ -50,15 +50,31 @@ Example input:
 }
 ```
 
-Example output:
+Example output (transposed with csvtk for readability):
 ```{bash}
-filename        total_bp        coverage        read_total      read_min        read_mean       read_std        read_median     read_max        read_25th       read_75th       qual_mean       qual_std        qual_median     qual_25th       qual_75th
-fastq-scan.json 7500    0.05    75      100     100     0       100     100     100     100     34.0267 0.711306        34      34      34
+any2tsv fastq-scan fastq-scan.json | csvtk transpose -t
+filename        fastq-scan.json
+total_bp        7500
+coverage        0.05
+read_total      75
+read_min        100
+read_mean       100
+read_std        0
+read_median     100
+read_max        100
+read_25th       100
+read_75th       100
+qual_mean       34.0267
+qual_std        0.711306
+qual_median     34
+qual_25th       34
+qual_75th       34
 ```
 """
 import json
 from os.path import basename
-
+__name__ = "fastq-scan"
+__description__ = "Generate FASTQ summary statistics in JSON format"
 
 def parse(input_file: str) -> dict:
     """

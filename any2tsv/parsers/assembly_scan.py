@@ -30,15 +30,39 @@ Example input:
 }
 ```
 
-Example output:
+Example output (transposed with csvtk for readability):
 ```{bash}
-filename        contig_non_acgtn        contig_percent_a        contig_percent_c        contig_percent_g        contig_percent_n        contig_percent_t        contigs_greater_100k    contigs_greater_10k     contigs_greater_1k      contigs_greater_1m      l50_contig_count      max_contig_length       mean_contig_length      median_contig_length    min_contig_length       n50_contig_length       num_contig_non_acgtn    percent_contigs_greater_100k    percent_contigs_greater_10k     percent_contigs_greater_1k      percent_contigs_greater_1m    total_contig    total_contig_length
-assembly-scan.json      0.00    23.97   21.48   23.28   0.00    31.27   0       0       1       0       1       5386    5386    5386    5386    5386    0       0.00    0.00    100.00  0.00    1       5386
+any2tsv assembly-scan assembly-scan.json | csvtk transpose -t
+filename        assembly-scan.json
+contig_non_acgtn        0.00
+contig_percent_a        23.97
+contig_percent_c        21.48
+contig_percent_g        23.28
+contig_percent_n        0.00
+contig_percent_t        31.27
+contigs_greater_100k    0
+contigs_greater_10k     0
+contigs_greater_1k      1
+contigs_greater_1m      0
+l50_contig_count        1
+max_contig_length       5386
+mean_contig_length      5386
+median_contig_length    5386
+min_contig_length       5386
+n50_contig_length       5386
+num_contig_non_acgtn    0
+percent_contigs_greater_100k    0.00
+percent_contigs_greater_10k     0.00
+percent_contigs_greater_1k      100.00
+percent_contigs_greater_1m      0.00
+total_contig    1
+total_contig_length     5386
 ```
 """
 import json
 from os.path import basename
-
+__name__ = "assembly-scan"
+__description__ = "Generate basic stats for an assembly"
 
 def parse(input_file: str) -> dict:
     """
