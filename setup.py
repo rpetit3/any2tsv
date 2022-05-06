@@ -22,8 +22,7 @@ setup(
         "tools",
         "biology",
         "sequencing",
-        "NGS",
-        "next generation sequencing",
+        "parsers",
         "bactopia"
     ],
     author="Robert A. Petit III",
