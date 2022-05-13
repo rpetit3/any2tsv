@@ -30,8 +30,9 @@ def rich_force_colors():
 @click.version_option(any2tsv.__version__)
 @click.argument("tool_name", metavar="<tool name>", required=False)
 @click.argument("input_file", metavar="<input file>", required=False)
-@click.option('--list_parsers', is_flag=True, default=False, help="List tools with an available parser.")
-def run_any2tsv(tool_name, input_file, list_parsers):
+@click.option('-l', '--list_parsers', is_flag=True, default=False, help="List tools with an available parser.")
+@click.option("-s", "--sample", type=str, default=None, help="ID to use for the 'any2tsv_id' column. (Default: input file name)")
+def run_any2tsv(tool_name, input_file, list_parsers, sample):
     if list_parsers:
         print_parsers(any2tsv.parsers.__all__)
     
@@ -39,8 +40,9 @@ def run_any2tsv(tool_name, input_file, list_parsers):
         raise click.ClickException("Please specify a tool name and input file.")
 
     tool_fname = tool_name.replace("-", "_")
+    any2tsv_id = sample if sample else os.path.basename(input_file)
     if tool_fname in any2tsv.parsers.__all__:
-        data_dict = getattr(any2tsv.parsers, tool_fname).parse(input_file)
+        data_dict = getattr(any2tsv.parsers, tool_fname).parse(input_file, any2tsv_id)
         dict_writer = csv.DictWriter(sys.stdout, data_dict.keys(), delimiter='\t')
         dict_writer.writeheader()
         dict_writer.writerow(data_dict)
