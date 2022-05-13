@@ -73,7 +73,7 @@ qual_75th       34
 """
 import json
 from os.path import basename
-__name__ = "fastq-scan"
+__name__ = "fastqscan"
 __description__ = "Generate FASTQ summary statistics in JSON format"
 
 def parse(input_file: str) -> dict:

@@ -1,6 +1,6 @@
 __all__ = [
-    'assembly_scan',
-    'fastq_scan'
+    'assemblyscan',
+    'fastqscan'
 ]
 
 from any2tsv.parsers import *

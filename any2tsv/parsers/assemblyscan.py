@@ -61,7 +61,7 @@ total_contig_length     5386
 """
 import json
 from os.path import basename
-__name__ = "assembly-scan"
+__name__ = "assemblyscan"
 __description__ = "Generate basic stats for an assembly"
 
 def parse(input_file: str) -> dict:
